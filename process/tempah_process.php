@@ -33,19 +33,17 @@ foreach ($tempahan as $id => $saiz_list) {
                     ];
 
                     $total += $jumlah;
-
                 }
-
             }
-
         }
-
     }
-
 }
 
 if ($total == 0) {
-    header("Location: ../index.php?menu=tempah");
+    echo "<script>
+            alert('Sila pilih sekurang-kurangnya satu produk untuk membuat tempahan.');
+            window.location.href = '../index.php?menu=tempah';
+          </script>";
     exit();
 }
 
@@ -59,3 +57,5 @@ $_SESSION['invois_data'] = [
 
 header("Location: ../index.php?menu=invois");
 exit();
+
+?>
